@@ -50,6 +50,14 @@ a:hover {
     padding-bottom: 5rem;
 }
 
+.center-v {
+    align-items: center;
+}
+
+.center-h {
+    justify-content: center;
+}
+
 .avatar {
     max-width: 35px;
 }
@@ -62,6 +70,22 @@ a:hover {
     border-right: 1px solid var(--grey);
 }
 
+.controls {
+  width: 100%;
+  background: #e5eaf5;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  border: 1px solid #1f53c5;
+  font-family: 'calibri';
+  font-size: 18px;
+  color: rgb(0, 0, 0);
+}
+
+.form-register {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
   
 @media (max-width: 768px) {
     #sidebar-container {
