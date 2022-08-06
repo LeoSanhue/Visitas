@@ -136,4 +136,12 @@ textarea:valid {
         border: 0;
     }
   }
-  
+  .BotonVisita{
+    color: rgb(250, 250, 250);
+    background-color: var(--primary);
+  }
+  .SubtituloVisita {
+    font-size: 30px;
+    margin-bottom: 10px;
+    color: black;
+}

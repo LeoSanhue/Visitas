@@ -15,7 +15,7 @@
         echo'<script type="text/javascript">alert("Se Agrego al Nuevo Visitante");
         window.location.href="RegistroVisitante.php";</script>';
     }else{
-        echo'<script type="text/javascript">alert("No Se Agrego al Nuevo Visitant");
+        echo'<script type="text/javascript">alert("No Se Agrego al Nuevo Visitante");
         window.location.href="RegistroVisitante.php";</script>';
     }
 }else{

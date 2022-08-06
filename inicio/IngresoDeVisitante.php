@@ -21,8 +21,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-9 col-md-8">
-                        <h1 class="font-weight-bold mb-0"> Ingreso de la visita</h1>
-                        <p class="lead text-muted">Seleccione Visitante y arrendatario por favor</p>
+                        <h1 class="font-weight-bold mb-0"> Registro de visitas</h1>
+                        <p class="lead text-muted">Seleccione al Visitante y arrendatario por favor</p>
                      </div>
                 </div>
              </div>
@@ -34,7 +34,7 @@
                         <div class="col-lg-4 my-3">
                             <div class="card rounded-0">
                                 <div class="card-header bg-light">
-                                    <h6 class="form-register"> Registro de la visita</h6>
+                                    <h6 class="SubtituloVisita"> Visita</h6>
                                 </div>
                                
                                 <div class="card-body">
@@ -67,7 +67,8 @@
                                                 ?>
                                                 </select>
                                                 <br>
-                                                <input type="submit" value="Registrar Visita"></input>
+                                                <br>
+                                                <input class = "BotonVisita" type="submit" value="Registrar Visita"></input>
                                         </form>
                                         
                                         </td>
