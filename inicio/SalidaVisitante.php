@@ -1,5 +1,5 @@
-    <!-- head -->
-    <?php include('../partes/head.php') ?>
+     <!-- head -->
+     <?php include('../partes/head.php') ?>
     <!-- fin head -->
 
 
