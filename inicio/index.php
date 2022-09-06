@@ -91,10 +91,10 @@
                                 </div>
                                 <div class="card-body pt-2">            
                                     <div class="d-flex border-bottom py-2">
-                                        <button class="btn btn-primary w-100" onclick="location.href='RegistroVisitante.php'">Ingresar Nuevo Visitante</button>
+                                        <button class="btn btn-primary w-100" onclick="location.href='RegistroVisitante.php'">Registrar Nuevo Visitante</button>
                                     </div>
                                     <div class="d-flex border-bottom py-2"> 
-                                        <button class="btn btn-primary w-100" onclick="location.href='IngresoDeVisitante.php'">Registro Visitantes</button>
+                                        <button class="btn btn-primary w-100" onclick="location.href='IngresoDeVisitante.php'">Ingresar Visitantes</button>
                                     </div>
                                     <div class="d-flex border-bottom py-2">
                                         <button class="btn btn-primary w-100" onclick="location.href='HistorialVisitas.php'" >Ver Historial Visitas</button>

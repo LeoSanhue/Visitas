@@ -2,7 +2,7 @@
 <?php include('../partes/head.php') ?>
     <!-- fin head -->
 
-
+<script src=table-sort.js></script>
 
 <body>
 
@@ -19,7 +19,14 @@
     <!-- Fin Navbar -->
 
         <!-- Page Content -->
-        <div id="content" class="bg-grey w-100">
+        <div id="content" class="bg-light w-100">
+                <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb bg-transparent">
+                                <li class="breadcrumb-item"><a href="../index.php">Inicio</a></li>
+                                <li class="breadcrumb-item">Visitas</li>
+                                <li class="breadcrumb-item active" aria-current="page">Historial Visitas</li>
+                        </ol>
+                </nav>   
 
                 <section class="bg-light py-3">
                     <div class="container">
@@ -27,23 +34,18 @@
                             <div class="col-lg-9 col-md-8">
                                 <h1 class="font-weight-bold mb-0">Visitas</h1>
                                 <p class="lead text-muted">Revisa la última información</p>
+ 
                             </div>
                         </div>
                     </div>
                 </section>
 
-                <section class="bg-mix py-3">
-                <div class="container">
-                   
-                </div>
-              </section>
-
  
 
               <section>
                   <div class="container">
-                      <div class="row">
-                          <div class="col-lg-4 my-3">
+                      <div class="row center-h">
+                          <div class="col-lg-5 my-5">
                             <div class="card rounded-0">
                                 <div class="card-header bg-light">
                                     <h6 class="form-register"> Historial de Visitas</h6>
@@ -70,7 +72,8 @@
                                         }
 
                                         
-                                        if($valores['ARR_NOMBRE'] == null){ ?>
+                                        if($valores['ARR_NOMBRE'] == null){ 
+                                            $A=0?>
                                             <option value="0">No hay Arrendatarios disponibles</option>>
                                      <?php
                                       }
@@ -79,7 +82,15 @@
 
                                     </select> <br> <br>
 
-                                    <button class="btn btn-success btn-sm" type="submit" value="Submit" name="ver">Ver Historial</button>
+                                    <?php
+                                        if($A==1)
+                                            {?>
+                                                <button class="btn btn-primary w-100 align-self-center" type="submit" value="Submit" name="ver">Ver Historial</button>
+                                            <?php
+                                            }
+                                            ?>  
+
+                                    
                                 </form>   
                                 </td>
                                 </tr>
@@ -106,11 +117,23 @@
                 })};
                 </script>  
 
+            <style>
+                table,th,td{
+                    border: 1px solid #111B54;
+                    border-collapse: collapse;
+                }
+
+                table thead tr{
+                    background: #111B54;
+                    color: white;
+
+                }
+            </style>
 
               <section>
-                        <div class ="article center-h rounded-0"> 
+                        <div class ="container center-h rounded-0"> 
                         <?php include("./conex_bd.php");?>
-                                <table border="1" class="table table-striped">  
+                                <table border="1" class="table table-striped table-sort">  
 		                        <thead>
 		                        <tr>
 			                    <th>RUT</th>
@@ -126,7 +149,7 @@
                                     
                                     if(isset($_POST["ver"])){
                                         $arr=$_POST["lista1"];
-                                        foreach($conex->query("SELECT V.VIS_RUT, date_format(R.RGT_HORAINGRESO, '%m-%d-%Y %H:%m:%s') AS INGRESO , V.VIS_APELLIDOPATERNO, V.VIS_NOMBRE, date_format(R.RGT_HORASALIDA, '%m-%d-%Y %H:%m:%s') AS SALIDA FROM EA_DUENO_ARRENDATARIO A, EA_REGISTRAR R, EA_VISITANTE V WHERE  A.ARR_ID = $arr AND V.VIS_ID=R.VIS_ID AND A.ARR_ID=R.ARR_ID;") as $row){ ?>
+                                        foreach($conex->query("SELECT V.VIS_RUT, date_format(R.RGT_HORAINGRESO, '%d-%m-%Y %H:%m:%s') AS INGRESO , V.VIS_APELLIDOPATERNO, V.VIS_NOMBRE, date_format(R.RGT_HORASALIDA, '%d-%m-%Y %H:%m:%s') AS SALIDA FROM EA_DUENO_ARRENDATARIO A, EA_REGISTRAR R, EA_VISITANTE V WHERE  A.ARR_ID = $arr AND V.VIS_ID=R.VIS_ID AND A.ARR_ID=R.ARR_ID;") as $row){ ?>
                                             <tr>
                                             <td><?php echo $row['VIS_RUT'] ?></td>
                                             <td><?php echo $row['VIS_APELLIDOPATERNO'] ?></td>
